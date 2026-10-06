@@ -18,6 +18,9 @@
       <aside class="sidebar">
         <div class="sidebar-heading"><span>CAST</span><button class="add-btn" id="addFigure">+</button></div>
         <div id="castList" class="cast-list"></div>
+        <div class="sidebar-heading saved-heading"><span>SAVED SCENES</span><button class="add-btn" id="newScene">+</button></div>
+        <div id="savedScenes" class="saved-scenes"><button class="saved-scene active"><span>01</span><span>Untitled scene</span><em>●</em></button></div>
+        <button class="background-btn" id="backgroundBtn">▧ Set background</button>
         <div class="tip-card"><span class="tip-icon">☝</span><div><strong>Drag to direct</strong><p>Move a figure on stage to record its path.</p></div></div>
         <div class="sidebar-footer"><span class="help-bubble">?</span><span>Quick guide</span><kbd>⌘</kbd><kbd>/</kbd></div>
       </aside>
@@ -25,13 +28,16 @@
       <section class="center-stage">
         <div class="stage-toolbar"><div class="scene-label"><span class="scene-dot"></span> SCENE 01 <span class="slash">/</span> <span contenteditable="true">A surprise visitor</span></div><div class="toolbar-actions"><button id="undoBtn">↶ Undo</button><button id="clearBtn">Clear stage</button></div></div>
         <div class="stage-wrap"><div id="stage" class="stage" aria-label="Storyboard stage"><div class="stage-grid"></div><div class="stage-floor"></div><div class="empty-hint" id="emptyHint"><div class="empty-scribble">✦</div><strong>Your stage is ready</strong><span>Add a character, then drag them around.</span></div></div><div class="stage-caption"><span><i class="live-dot"></i> LIVE DIRECTING</span><span>Scene duration <b id="duration">00:06</b></span></div></div>
-        <div class="director-bar"><button class="play-btn" id="playBtn"><span class="play-icon">▶</span><span id="playText">Play scene</span></button><div class="record-status"><span class="record-dot"></span><div><strong id="recordTitle">Ready to record</strong><small>Drag a character to create a movement beat</small></div></div><div class="director-shortcuts"><span><kbd>Space</kbd> Play</span><span><kbd>R</kbd> Record</span></div></div>
+        <div class="director-bar"><button class="record-btn" id="recordBtn"><span class="record-icon">●</span><span id="recordText">Record scene</span></button><button class="play-btn" id="playBtn"><span class="play-icon">▶</span><span id="playText">Play scene</span></button><div class="record-status"><span class="record-dot"></span><div><strong id="recordTitle">Ready — press Record</strong><small>Record first, then drag a character on stage</small></div></div><div class="director-shortcuts"><span><kbd>Space</kbd> Play</span><span><kbd>R</kbd> Record</span></div></div>
         <div class="timeline-panel"><div class="timeline-head"><div><strong>Timeline</strong><span class="timeline-note">Your scene beats show up here</span></div><button id="addBeat">+ Add beat</button></div><div class="timeline-ruler"><span>00:00</span><span>00:01</span><span>00:02</span><span>00:03</span><span>00:04</span><span>00:05</span><span>00:06</span></div><div class="tracks" id="tracks"></div></div>
       </section>
 
       <aside class="inspector"><div class="inspector-head"><span>DIRECTOR’S DESK</span><button class="more-btn">•••</button></div><div class="shot-card"><div class="shot-number">01</div><div><strong>A surprise visitor</strong><p>Wide shot · interior</p></div><button class="edit-btn">✎</button></div><div class="inspector-section"><label>Scene notes</label><div class="notes" contenteditable="true">Maya hears a sound off-screen.</div></div><div class="inspector-section"><label>Quick actions</label><button class="action-row" id="duplicateBtn"><span>▣</span> Duplicate scene <kbd>⌘ D</kbd></button><button class="action-row" id="focusBtn"><span>⌖</span> Center stage <kbd>F</kbd></button><button class="action-row" id="exportBtn"><span>↗</span> Export storyboard</button></div><div class="mini-tip"><div class="mini-stars">✳ ✳</div><strong>Keep it loose.</strong><p>Storyboard first, polish later. The best ideas are a little wobbly.</p></div></aside>
     </section>
   </main>
+  <style>
+    .saved-heading{margin-top:28px}.saved-scenes{display:grid;gap:5px;margin-top:10px}.saved-scene{display:flex;align-items:center;gap:8px;border:0;background:transparent;color:#857e73;text-align:left;padding:8px 5px;border-radius:6px;font:11px Outfit}.saved-scene.active{background:#fff;border:1px solid #e8e3d9;color:#25231f}.saved-scene span:first-child{font:10px monospace;color:#f26b45}.saved-scene em{margin-left:auto;font-style:normal;color:#69ba7a;font-size:9px}.background-btn{width:100%;margin-top:13px;padding:9px;border:1px dashed #d8d1c3;background:transparent;border-radius:7px;color:#928a7f;font:11px Outfit}.record-btn{border:0;background:#302d28;color:#fff;border-radius:7px;padding:11px 13px;display:flex;gap:8px;align-items:center;font:600 12px Outfit;box-shadow:0 3px 0 #171613}.record-btn.is-recording{background:#db4930}.record-icon{font-size:10px}.stage.sunset{background:linear-gradient(#f7dfd1 0 58%,#f7eed8 58%)}
+  </style>
   <script src="script.js"></script>
 </body>
 </html>
