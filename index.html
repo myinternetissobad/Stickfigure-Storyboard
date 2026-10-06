@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stickfigure Storyboarder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✳</span><span>Stickfigure<br /><strong>Storyboarder</strong></span></div>
+      <div class="project-name"><span class="status-dot"></span><span contenteditable="true" aria-label="Project name">Untitled scene</span><small>• saved just now</small></div>
+      <div class="top-actions"><button class="icon-btn" title="Help">?</button><button class="save-btn" id="saveBtn">Save scene</button></div>
+    </header>
+
+    <section class="workspace">
+      <aside class="sidebar">
+        <div class="sidebar-heading"><span>CAST</span><button class="add-btn" id="addFigure">+</button></div>
+        <div id="castList" class="cast-list"></div>
+        <div class="tip-card"><span class="tip-icon">☝</span><div><strong>Drag to direct</strong><p>Move a figure on stage to record its path.</p></div></div>
+        <div class="sidebar-footer"><span class="help-bubble">?</span><span>Quick guide</span><kbd>⌘</kbd><kbd>/</kbd></div>
+      </aside>
+
+      <section class="center-stage">
+        <div class="stage-toolbar"><div class="scene-label"><span class="scene-dot"></span> SCENE 01 <span class="slash">/</span> <span contenteditable="true">A surprise visitor</span></div><div class="toolbar-actions"><button id="undoBtn">↶ Undo</button><button id="clearBtn">Clear stage</button></div></div>
+        <div class="stage-wrap"><div id="stage" class="stage" aria-label="Storyboard stage"><div class="stage-grid"></div><div class="stage-floor"></div><div class="empty-hint" id="emptyHint"><div class="empty-scribble">✦</div><strong>Your stage is ready</strong><span>Add a character, then drag them around.</span></div></div><div class="stage-caption"><span><i class="live-dot"></i> LIVE DIRECTING</span><span>Scene duration <b id="duration">00:06</b></span></div></div>
+        <div class="director-bar"><button class="play-btn" id="playBtn"><span class="play-icon">▶</span><span id="playText">Play scene</span></button><div class="record-status"><span class="record-dot"></span><div><strong id="recordTitle">Ready to record</strong><small>Drag a character to create a movement beat</small></div></div><div class="director-shortcuts"><span><kbd>Space</kbd> Play</span><span><kbd>R</kbd> Record</span></div></div>
+        <div class="timeline-panel"><div class="timeline-head"><div><strong>Timeline</strong><span class="timeline-note">Your scene beats show up here</span></div><button id="addBeat">+ Add beat</button></div><div class="timeline-ruler"><span>00:00</span><span>00:01</span><span>00:02</span><span>00:03</span><span>00:04</span><span>00:05</span><span>00:06</span></div><div class="tracks" id="tracks"></div></div>
+      </section>
+
+      <aside class="inspector"><div class="inspector-head"><span>DIRECTOR’S DESK</span><button class="more-btn">•••</button></div><div class="shot-card"><div class="shot-number">01</div><div><strong>A surprise visitor</strong><p>Wide shot · interior</p></div><button class="edit-btn">✎</button></div><div class="inspector-section"><label>Scene notes</label><div class="notes" contenteditable="true">Maya hears a sound off-screen.</div></div><div class="inspector-section"><label>Quick actions</label><button class="action-row" id="duplicateBtn"><span>▣</span> Duplicate scene <kbd>⌘ D</kbd></button><button class="action-row" id="focusBtn"><span>⌖</span> Center stage <kbd>F</kbd></button><button class="action-row" id="exportBtn"><span>↗</span> Export storyboard</button></div><div class="mini-tip"><div class="mini-stars">✳ ✳</div><strong>Keep it loose.</strong><p>Storyboard first, polish later. The best ideas are a little wobbly.</p></div></aside>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
